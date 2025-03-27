@@ -1,13 +1,19 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { fetchCategories, setLoading } from "../Redux/slicers/categorySlicer";
+import { fetchCategories, setError, setLoading } from "../Redux/slicers/categorySlicer";
 import axios from "axios";
 import { fetchRecipe, fetchRecipies } from "../Redux/slicers/RecipeSlicer";
 
 function* categories() {
     yield put(setLoading(true))
-    const cats = yield call(() => axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')); 
-    yield put(fetchCategories(cats.data.categories));
-    yield put(setLoading(false))  
+    try {
+        const cats = yield call(() => axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')); 
+        yield put(fetchCategories(cats.data.categories));
+
+    } catch (error) {
+        yield put(setError(error.message))
+    } finally {
+        yield put(setLoading(false))  
+    }
 }
 
 function* getRecipes(action) {    

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function CardDetails({ data }) {
 
@@ -19,7 +20,7 @@ export default function CardDetails({ data }) {
     return (
 
         <div className="p-4">
-            <img alt="blog photo" src={data.strMealThumb} className="object-cover w-full" />
+            <LazyLoadImage alt="blog photo" loading="lazy" src={data.strMealThumb} className="object-cover w-full" />
             <div className="w-full p-4 bg-white dark:bg-gray-800">
                 <p className="font-medium text-indigo-500 text-md">
                     {data.strCategory}

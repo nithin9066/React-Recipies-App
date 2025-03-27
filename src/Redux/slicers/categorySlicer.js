@@ -4,7 +4,8 @@ const categorySlicer = createSlice({
     name: "category",
     initialState: {
         categories: [],
-        isLoading: false
+        isLoading: false,
+        error: null
     },
     reducers: {
         getCategories: (state) => {            
@@ -15,8 +16,11 @@ const categorySlicer = createSlice({
         },
         setLoading: (state, action) => {
             state.isLoading = action.payload
+        },
+        setError: (state, action) => {
+            state.error = action.payload
         }
     }
 })
-export const { getCategories, fetchCategories, setLoading } = categorySlicer.actions
+export const { getCategories, fetchCategories, setLoading, setError } = categorySlicer.actions
 export default categorySlicer.reducer;
