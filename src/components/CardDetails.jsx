@@ -20,7 +20,7 @@ export default function CardDetails({ data }) {
     return (
 
         <div className="bg-white dark:bg-gray-800">
-            <LazyLoadImage alt="blog photo" loading="lazy" src={data.strMealThumb} className="object-cover p-2 w-full" />
+            <LazyLoadImage alt="blog photo" loading="lazy" src={data.strMealThumb} className="object-cover px-2 w-full" />
             <div className="w-full p-4 bg-white dark:bg-gray-800">
                 <p className="font-medium text-indigo-500 text-md">
                     {data.strCategory}
