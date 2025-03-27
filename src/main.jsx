@@ -6,6 +6,7 @@ import Categories from './pages/Categories.jsx'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Recipes from './pages/Recipes.jsx'
 import RecipeDetails from './pages/RecipeDetails.jsx'
+import Offline from './components/Offline.jsx'
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
@@ -14,8 +15,8 @@ createRoot(document.getElementById('root')).render(
         <Route index element={<Categories />} />
         <Route path='recipies/:catName' element={<Recipes />} />
         <Route path='recipie/:mealId' element={<RecipeDetails />} />
-
       </Routes>
     </HashRouter>
+    <Offline />
   </Provider>,
 )
