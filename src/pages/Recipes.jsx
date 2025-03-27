@@ -35,9 +35,9 @@ export default function Recipes() {
       <div className="text-center">
         <input onChange={filterRecipes} className="border px-4 py-2 mb-4 rounded-md w-full md:w-auto" type="search" name="search" placeholder="Search..." />
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-6 bg-white dark:bg-gray-800">
         {
-          isLoading ? <h4>Loading...</h4> : filterData.map(recipie => <Card key={recipie.idMeal} data={recipie}></Card>)
+          isLoading ? <div className="text-center content-center h-[70dvh] col-span-full"><h4 className="text-gray-500 dark:text-gray-300">Loading...</h4></div> : filterData.map(recipie => <Card key={recipie.idMeal} data={recipie}></Card>)
         }
       </div>
     </div>

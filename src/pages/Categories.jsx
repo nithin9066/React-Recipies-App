@@ -35,7 +35,7 @@ function Categories() {
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {
-          error ? error : isLoading ? <div className="text-center content-center h-[70dvh] col-span-full"><h4>Loading...</h4></div> : filteredCats.map(cat => <Card type={'category'} key={cat.idCategory} data={cat}></Card>)
+          error ? error : isLoading ? <div className="text-center content-center h-[70dvh] col-span-full"><h4 className="text-gray-500 dark:text-gray-300">Loading...</h4></div> : filteredCats.map(cat => <Card type={'category'} key={cat.idCategory} data={cat}></Card>)
         }
       </div>
     </div>

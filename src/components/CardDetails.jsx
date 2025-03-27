@@ -19,7 +19,7 @@ export default function CardDetails({ data }) {
     }, [data])
     return (
 
-        <div className="p-4">
+        <>
             <LazyLoadImage alt="blog photo" loading="lazy" src={data.strMealThumb} className="object-cover w-full" />
             <div className="w-full p-4 bg-white dark:bg-gray-800">
                 <p className="font-medium text-indigo-500 text-md">
@@ -43,7 +43,7 @@ export default function CardDetails({ data }) {
                     })
                 }
             </div>
-        </div>
+        </>
 
     )
 }
